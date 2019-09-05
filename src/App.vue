@@ -1,14 +1,16 @@
 <template>
   <div id="app">
       <brand-component></brand-component>
+      <navigation-component></navigation-component>
   </div>
 </template>
 
 <script>
 import BrandComponent from './components/BrandComponent'
+import NavigationComponent from './components/NavigationComponent'
 
 export default {
-  components: {BrandComponent}
+  components: {BrandComponent, NavigationComponent}
 }
 </script>
 

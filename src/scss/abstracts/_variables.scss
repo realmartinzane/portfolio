@@ -1,5 +1,19 @@
+// Colors
 $color-primary: #36A9E1;
+$color-primary-dark: rgb(52, 161, 216);
+$color-primary-dark-2: rgb(48, 149, 199);
 
-$color-secondary: #212529;
-$color-secondary-light: #808080;
-$color-secondary-dark: #505050;
+$color-secondary: #22262a;
+
+$color-gray-light: #6e7b88;
+
+$color-white: #fff;
+$color-black: #000;
+
+// Cubic Beziers
+$cubic-bezier-primary: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+// Layers
+
+$layer-burger: 1000;
+$layer-navigation: 900;

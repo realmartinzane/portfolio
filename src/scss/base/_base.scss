@@ -10,6 +10,7 @@
 // Definition for 1rem
 html 
 {
+    height: 100%;
     font-size: 62.5%;
     @media only screen and (max-width: 56.25em)
     {
@@ -20,6 +21,11 @@ html
     {
         font-size: 50%;
     }
+}
 
-    &, body {height: 100%;}
+// Body
+body
+{
+    box-sizing: border-box;
+    height: 100%;
 }
