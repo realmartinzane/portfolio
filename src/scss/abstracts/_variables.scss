@@ -1,11 +1,9 @@
 // Colors
-$color-primary: #36A9E1;
-$color-primary-dark: rgb(52, 161, 216);
-$color-primary-dark-2: rgb(48, 149, 199);
+$color-primary: #8796a5; // #36A9E1
+$color-primary-dark: #788592; // #34a1d8
+$color-primary-dark-2: #6c7783; // #3095c7
 
 $color-secondary: #22262a;
-
-$color-gray-light: #6e7b88;
 
 $color-white: #fff;
 $color-black: #000;
@@ -17,3 +15,12 @@ $cubic-bezier-primary: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 $layer-burger: 1000;
 $layer-navigation: 900;
+
+// Fonts
+$font-primary: Staatliches, sans-serif;
+$font-secondary: Consolas, sans-serif;
+
+// Grid
+$grid-width: 100%;
+$gutter-vertical: 6rem;
+$gutter-horizontal: 6rem;

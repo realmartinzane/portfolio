@@ -2,6 +2,7 @@
   <div id="app">
       <brand-component></brand-component>
       <navigation-component></navigation-component>
+      <router-view></router-view>
   </div>
 </template>
 
