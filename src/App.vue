@@ -2,6 +2,7 @@
   <div id="app">
       <brand-component></brand-component>
       <navigation-component></navigation-component>
+      <contact-component></contact-component>
       <router-view></router-view>
   </div>
 </template>
@@ -9,9 +10,10 @@
 <script>
 import BrandComponent from './components/BrandComponent'
 import NavigationComponent from './components/NavigationComponent'
+import ContactComponent from './components/ContactComponent'
 
 export default {
-  components: {BrandComponent, NavigationComponent}
+  components: {BrandComponent, NavigationComponent, ContactComponent}
 }
 </script>
 

@@ -8,6 +8,10 @@ $color-secondary: #22262a;
 $color-white: #fff;
 $color-black: #000;
 
+$color-linkedin: #0077b5;
+$color-github: #333;
+$color-email: #6FC2B0;
+
 // Cubic Beziers
 $cubic-bezier-primary: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
@@ -15,6 +19,7 @@ $cubic-bezier-primary: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 $layer-burger: 1000;
 $layer-navigation: 900;
+$layer-contact: 800;
 
 // Fonts
 $font-primary: Staatliches, sans-serif;
