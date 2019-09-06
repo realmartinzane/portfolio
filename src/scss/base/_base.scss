@@ -12,9 +12,9 @@ html
 {
     height: 100%;
     font-size: 62.5%;
-    @media only screen and (max-width: 56.25em)
+    @media only screen and (max-width: 62.5em)
     {
-        font-size: 55%;
+        font-size: 55.5%;
     }
 
     @media only screen and (max-width: 37.5em)
@@ -32,6 +32,22 @@ body
 
 main
 {
-    width: 115rem;
+    width: 90%;
     margin: 2.5rem auto;
+
+    @media only screen and (max-width: 62.5em)
+    {
+        width: 85%;
+    }
+
+    @media only screen and (max-width: 31.25em)
+    {
+        width: 78%
+    }
+
+    @media only screen and (min-width: 87.5em)
+    {
+        width: 120rem
+    }
+
 }

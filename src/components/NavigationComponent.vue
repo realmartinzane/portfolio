@@ -54,6 +54,11 @@ export default {
             z-index: $layer-burger;
             width: 4.2rem;
             cursor: pointer;
+
+            @media only screen and (min-width: 120em)
+            {
+                width: 6.2rem;
+            }
         }
 
         &__line
@@ -66,7 +71,15 @@ export default {
             vertical-align: middle;
             margin: auto;
 
-            &:nth-child(1), &:nth-child(3) {transform-origin: 5.5% 50%;}
+            &:nth-child(1), &:nth-child(3) 
+            {
+                transform-origin: 5.5% 50%;
+
+                @media only screen and (min-width: 100em)
+                {
+                    transform-origin: 20.5% 50%;
+                }
+            }
         }
 
         // Button hover
@@ -137,13 +150,30 @@ export default {
             height: 100%;
         }
 
-        &__list {list-style: none}
+        &__list 
+        {
+            list-style: none;
+            width: 60rem;
+            margin: auto;
+
+            @media only screen and (max-width: 31.25em)
+            {
+                width: 80%;
+            }
+
+            @media only screen and (min-width: 100em)
+            {
+                width: 80rem;
+            }
+        }
+
+        &__item {width: 100%;}
 
         &__link 
         {
             &:visited, &:link
             {
-                width: 60rem;
+                width: 100%;
                 padding: 2.5rem 0;
                 display: block;
                 text-align: center;

@@ -44,6 +44,11 @@ export default {
         font-size: 3rem;
         display: block;
 
+        @media only screen and (max-width: 44.375em)
+        {
+          font-size: 2rem;
+        }
+
         &__word 
         {
             display: inline-block;
@@ -51,6 +56,12 @@ export default {
             margin: 0 .5rem;
             height: 4rem;
             overflow: hidden;
+
+            @media only screen and (max-width: 44.375em)
+            {
+                height: 2.5rem;
+                margin: 0 0.3rem;
+            }
 
             * 
             {
@@ -64,7 +75,12 @@ export default {
 
             &--active *
             {
-                transform: translateY(-3.6rem);
+                transform: translateY(-4rem);
+
+                @media only screen and (max-width: 44.375em)
+                {
+                    transform: translateY(-3rem);
+                }
             }
 
             &--active &__bottom
@@ -75,7 +91,7 @@ export default {
 
         &__top 
         {
-            margin-bottom: .6rem;
+            margin-bottom: 1rem;
         }
 
         &__bottom 

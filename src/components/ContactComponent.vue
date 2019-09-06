@@ -40,8 +40,14 @@ export default {
     {
         position: absolute;
         top: 50%;
-        left: -6.2rem;
+        left: -7rem;
+        transform: translateY(-50%);
         z-index: $layer-contact;
+
+        @media only screen and (min-width: 100em)
+        {
+            left: -12.5rem
+        }
 
         &__list
         {
@@ -56,8 +62,19 @@ export default {
                 color: $color-white;
                 font-size: 2.5rem;
                 padding: 1.2rem;
-                transition: all 400ms $cubic-bezier-primary;
+                transition: all 450ms $cubic-bezier-primary;
                 text-decoration: none;
+
+                @media only screen and (max-width: 31.25em)
+                {
+                    padding: 1rem;
+                }
+
+                @media only screen and (min-width: 100em)
+                {
+                    padding: 1.5rem;
+                    font-size: 2.8rem;
+                }
             }
 
             &--linkedin {background-color: $color-linkedin}
@@ -67,7 +84,7 @@ export default {
 
             &:hover, &:active, &:focus
             {
-                transform: translateX(5.5rem)
+                transform: translateX(6.4rem)
             }
         }
 
@@ -77,8 +94,14 @@ export default {
             vertical-align: middle;
             font-size: 1.6rem;
             margin-right: 1.2rem;
-            width: 5rem;
+            width: 5.8rem;
+            letter-spacing: 1px;
             text-align: right;
+
+            @media only screen and (min-width: 100em)
+            {
+                width: 10.8rem;
+            }
         }
     }
 

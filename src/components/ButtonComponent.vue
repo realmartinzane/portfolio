@@ -27,7 +27,7 @@ export default {
             transition: all 150ms;
             display: block;
             width: 100%;
-            height: 4rem;
+            height: 4.5rem;
             line-height: 1;
             font-size: 2rem;
             border: 2px solid $color-white;
@@ -45,7 +45,7 @@ export default {
 
         &:hover * 
         {
-            transform: translateY(-5rem);
+            transform: translateY(-5.5rem);
             cursor: pointer;
         }
     }
