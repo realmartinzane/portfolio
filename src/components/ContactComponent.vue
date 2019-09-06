@@ -63,7 +63,7 @@ export default {
             &--linkedin {background-color: $color-linkedin}
             &--github {background-color: $color-github}
             &--email {background-color: $color-email}
-            &--resume {background-color: $color-primary-dark-2}
+            &--resume {background-color: $color-gray}
 
             &:hover, &:active, &:focus
             {

@@ -1,6 +1,6 @@
 <template>
     <div class="navigation">
-        <input type="checkbox" class="navigation__checkbox" id="nav_toggle">
+        <input type="checkbox" class="navigation__checkbox" id="nav_toggle" v-model="navActive">
         <label for="nav_toggle" class="navigation__button">
             <div class="navigation__line"></div>
             <div class="navigation__line"></div>
@@ -9,13 +9,13 @@
 
         <nav class="navigation__nav">
             <ul class="navigation__list">
-                <li class="navigation__item">
+                <li class="navigation__item" @click="navActive = false">
                     <router-link to="/about" class="navigation__link">
                         <span>About</span>
                     </router-link>
                 </li>
 
-                <li class="navigation__item">
+                <li class="navigation__item" @click="navActive = false">
                     <router-link to="/portfolio" class="navigation__link">
                         <span>Portfolio</span>
                     </router-link>
@@ -27,7 +27,13 @@
 
 <script>
 export default {
-    
+    data(){return{
+        navActive: false
+    }},
+    methods: 
+    {
+        test() {console.log('test')}
+    }
 }
 </script>
 
@@ -55,7 +61,7 @@ export default {
             display: inline-block;
             width: 100%;
             height: 2px;
-            background-color: $color-primary;
+            background-color: $color-text;
             transition: all 300ms $cubic-bezier-primary, background-color 300ms ease-in;
             vertical-align: middle;
             margin: auto;
@@ -89,7 +95,7 @@ export default {
         &__checkbox:checked + &__button &__line
         {
             background-color: $color-white;
-            transition: background-color 300ms ease-out;
+            transition: all 300ms $cubic-bezier-primary, background-color 300ms ease-out;
         }
 
         &__checkbox:checked + &__button &__line:nth-child(2)

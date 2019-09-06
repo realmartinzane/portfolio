@@ -17,5 +17,6 @@ export default {
         font-size: 4.0rem;
         color: $color-white;
         letter-spacing: 2px;
+        user-select: text;
     }
 </style>

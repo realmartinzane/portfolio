@@ -1,12 +1,16 @@
 // Colors
-$color-primary: #8796a5; // #36A9E1
-$color-primary-dark: #788592; // #34a1d8
-$color-primary-dark-2: #6c7783; // #3095c7
+$color-primary: #343a41; // #36A9E1
+$color-primary-dark: #31363b; // #34a1d8
+$color-primary-dark-2: #252a2e; // #3095c7
 
 $color-secondary: #22262a;
 
+$color-text: #8796a5;
+$color-text-dark: #5b6570;
+
 $color-white: #fff;
 $color-black: #000;
+$color-gray: #565f69;
 
 $color-linkedin: #0077b5;
 $color-github: #333;
@@ -16,7 +20,6 @@ $color-email: #6FC2B0;
 $cubic-bezier-primary: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 // Layers
-
 $layer-burger: 1000;
 $layer-navigation: 900;
 $layer-contact: 800;

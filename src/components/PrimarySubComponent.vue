@@ -39,7 +39,7 @@ export default {
 <style lang="scss">
     .primary-sub
     {
-        color: $color-primary;
+        color: $color-text;
         line-height: 1;
         font-size: 3rem;
         display: block;
@@ -80,7 +80,7 @@ export default {
 
         &__bottom 
         {
-            color: $color-primary-dark-2;
+            color: $color-text-dark;
         }
     }
 </style>
