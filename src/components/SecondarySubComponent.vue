@@ -1,5 +1,5 @@
 <template>
-    <sub class="sub-header"> 
+    <sub class="secondary-sub"> 
         // <slot></slot>
     </sub>
 </template>
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style lang="scss">
-    .sub-header
+    .secondary-sub
     {
         font-family: $font-secondary;
         font-size: 1.6rem;

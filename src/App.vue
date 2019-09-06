@@ -24,6 +24,7 @@ export default {
     min-height: 100%;
     padding: 1.5rem;
     background-color: $color-secondary;
+    user-select: none;
   }
 
 </style>
