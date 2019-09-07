@@ -1,12 +1,13 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+
 // Abstracts
 @import 'abstracts/variables',
         'abstracts/mixins';
 
 // Base
 @import 'base/base',
-        'base/animations',
-        'base/typography',
-        'base/utilities';
+        'base/typography';
 
 // Layout
 @import 'layout/grid';

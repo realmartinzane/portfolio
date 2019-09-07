@@ -29,11 +29,7 @@
 export default {
     data(){return{
         navActive: false
-    }},
-    methods: 
-    {
-        test() {console.log('test')}
-    }
+    }}
 }
 </script>
 

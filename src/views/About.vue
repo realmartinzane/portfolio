@@ -1,5 +1,5 @@
 <template>
-  <main class="about">
+  <main class="about" :class="{'rotate': loading}">
       <primary-header-component> <span>Yo, it's </span> <span> Martin Zane</span> </primary-header-component>
       <primary-sub-component :text="'I\'m a web designer &amp; developer currently based in Stockholm, Sweden'"></primary-sub-component>
       <primary-sub-component :text="'Let\'s create something special'"></primary-sub-component>
@@ -13,17 +13,32 @@ import PrimarySubComponent from '../components/PrimarySubComponent'
 import ButtonComponent from '../components/ButtonComponent'
 
 export default {
-  components: {PrimaryHeaderComponent, PrimarySubComponent, ButtonComponent}
+  components: {PrimaryHeaderComponent, PrimarySubComponent, ButtonComponent},
+    data(){return{
+        loading: true
+    }},
+
+    mounted()
+    {
+        setTimeout(() => 
+        {
+            this.loading = false
+        }, 200)
+    }
 }
 </script>
 
 <style lang="scss">
 
-    main.about 
+    .about 
     {
         @include absoluteCenter;
         width: 86rem;
         text-align: center;
+        opacity: 1;
+        visibility: visible;
+        transform-origin: 50% 100%;
+        transition: all 300ms ease-out;
         
         @media only screen and (max-width: 62.5em)
         {
@@ -34,6 +49,13 @@ export default {
         {
           width: 75%;
         }
+    }
+
+    .rotate
+    {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-50%, -50%) rotate(8deg);
     }
 
 </style>

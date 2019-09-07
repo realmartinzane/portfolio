@@ -19,17 +19,20 @@
 <script>
 
 export default {
-    props: ['img']
-  
+    props: ['img']  
 }
 </script>
 
 <style lang="scss">
+
     .project
     {
         position: relative;
         overflow: hidden;
         box-shadow: 0 0 10px $color-black;
+        opacity: 1;
+        transition: all 300ms ease-out;
+        visibility: visible;
         
         &:hover &__overlay
         {

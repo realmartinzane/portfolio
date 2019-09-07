@@ -18,5 +18,9 @@ export default {
         color: $color-white;
         letter-spacing: 2px;
         user-select: text;
+        
+        opacity: 1;
+        visibility: visible;
+        transition: all 300ms ease-out;
     }
 </style>
