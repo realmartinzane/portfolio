@@ -16,17 +16,20 @@ $color-linkedin: #0077b5;
 $color-github: #333;
 $color-email: #6FC2B0;
 
+$color-scroll: rgb(151, 191, 211);
+
 // Cubic Beziers
 $cubic-bezier-primary: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 // Layers
 $layer-burger: 1000;
 $layer-navigation: 900;
-$layer-contact: 800;
-
+$layer-modal: 800;
+$layer-contact: 700;
 // Fonts
 $font-primary: Staatliches, sans-serif;
 $font-secondary: Consolas, sans-serif;
+$font-secondary: Helvetica, sans-serif;
 
 // Grid
 $grid-width: 100%;

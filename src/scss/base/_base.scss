@@ -28,6 +28,7 @@ body
 {
     box-sizing: border-box;
     height: 100%;
+    overflow: hidden;
 }
 
 main
@@ -50,4 +51,24 @@ main
         width: 120rem
     }
 
+}
+
+// Scroll
+::-webkit-scrollbar-track
+{
+	border-radius: 12px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar
+{
+	width: 6px;
+    background-color: $color-secondary;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 12px;
+	background-color: $color-scroll;
 }

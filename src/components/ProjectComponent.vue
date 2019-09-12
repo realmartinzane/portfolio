@@ -1,16 +1,46 @@
 <template>
     <div class="col-1-of-2 project">
-        <img class="project__img" :src="'/img/' + img" alt="Project Image">
-        <div class="project__overlay">
-            <div class="project__buttons">
-                <a href="#" class="project__button">
-                    <font-awesome-icon icon="eye" />
-                    Demo
-                </a>
-                <a href="#" class="project__button">
-                    <font-awesome-icon icon="code" />
-                    Code
-                </a>
+        <div class="project__item">
+            <img class="project__img" :src="'/img/' + img" alt="Project Image">
+            <div class="project__overlay">
+                <div class="project__buttons">
+                    <button href="#" class="project__button" @click="showProject = true">
+                        <font-awesome-icon icon="eye" />
+                        View Project
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="project__background" :class="{'project__background--show': showProject}">
+            <div class="project__modal">
+                <button class="project__close" @click="showProject = false"><font-awesome-icon icon="times" /></button>
+
+                <div class="project__left">
+                    <img class="project__img--modal" :src="'/img/' + img" alt="Project Image">
+                </div
+
+                ><div class="project__right">
+                    <div class="project__label">Project</div>
+                    <h3 class="project__name">Personal Site</h3>
+                    <ul class="project__technologies">
+                        <li class="project__technology">Single Page</li>
+                        <li class="project__technology">HTML &amp; CSS</li>
+                        <li class="project__technology">JavaScript</li>
+                        <li class="project__technology">SASS</li>
+                        <li class="project__technology">Vue.js</li>
+                        <li class="project__technology">PHP</li>
+                        <li class="project__technology">Laravel</li>
+                        <li class="project__technology">MySQL</li>
+                        <li class="project__technology">Responsive</li>
+                    </ul>
+                    <div class="project__label">About</div>
+                    <p class="project__summary">
+                        This is the page you are looking at right now. I had two goals with this project. First off, I wanted to have a personal page where I can display my work and other things related to my career as a software developer. Secondly, I wanted to practice my design skills and make the page look as good as possible, in terms of aesthetics. I definitely learned a lot from this project, specifically when it comes to CSS animations, and it was a lot of fun to work with. In the future I just want to keep the site updated, especially my impossible list and portfolio section, and I also want to perhaps update the design so that it always looks fresh.
+                    </p>
+                    <a href="#" class="project__button project__button--modal"><font-awesome-icon icon="eye" /> Demo</a>
+                    <a href="#" class="project__button project__button--modal"><font-awesome-icon icon="code" /> Code</a>
+                </div>
             </div>
         </div>
     </div>
@@ -18,8 +48,14 @@
 
 <script>
 
+import ButtonComponent from './ButtonComponent'
+
 export default {
-    props: ['img']  
+    props: ['img'],
+    components: {ButtonComponent},
+    data(){return{
+        showProject: false
+    }}
 }
 </script>
 
@@ -27,12 +63,16 @@ export default {
 
     .project
     {
-        position: relative;
         overflow: hidden;
         box-shadow: 0 0 10px $color-black;
         opacity: 1;
         transition: all 300ms ease-out;
         visibility: visible;
+        
+        &__item 
+        {
+            position: relative;
+        }
         
         &:hover &__overlay
         {
@@ -49,6 +89,17 @@ export default {
         {
             width: 100%;
             transition: all 200ms;
+            &--modal 
+            {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+
+                @media only screen and (max-width: 45em) 
+                {
+                    object-fit: contain;
+                }
+            }
         }
 
         &__overlay 
@@ -72,36 +123,193 @@ export default {
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
+            
+            @media only screen and (max-width: 31.25em)
+            {
+                bottom: .5rem;
+            }
         }
 
         &__button
         {
-            &:link, &:visited
-            {
-                display: inline-block;
-                text-decoration: none;
-                color: $color-secondary;
-                font-family: $font-primary;
-                font-size: 1.8rem;
-                letter-spacing: 1px;
-                margin: 0 1rem;
-                background-color: rgba($color-white, .8);
-                border: none;
-                border-radius: 3px;
-                padding: .5rem 2rem;
-                cursor: pointer;
-                transition: all 200ms;
+            display: inline-block;
+            text-decoration: none;
+            color: $color-secondary;
+            font-family: $font-primary;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            margin: 0 1rem;
+            background-color: rgba($color-white, .8);
+            border: none;
+            border-radius: 3px;
+            padding: .5rem 2rem;
+            cursor: pointer;
+            transition: all 200ms;
 
-                svg 
-                {
-                    margin-right: .5rem
-                }
+            @media only screen and (max-width: 31.25em)
+            {
+                font-size: 1.6rem;
+            }
+
+            svg 
+            {
+                margin-right: .5rem
             }
 
             &:hover, &:focus, &:active
             {
                 background-color: rgba($color-white, 1);
             }
+
+            &--modal 
+            {
+                margin: 2rem .5rem 0 .5rem;
+                font-size: 1.4rem;
+                padding: .5rem 1.5rem;
+            }
+        }
+
+        &__background 
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: $layer-modal;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color-black, .3);
+            opacity: 0;
+            visibility: hidden;
+
+            &--show 
+            {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &__modal
+        {
+            @include absoluteCenter;
+            width: 100rem;
+            height: 50rem;
+            background-color: $color-primary;
+            user-select: text;
+            box-shadow: 0 0 5px $color-black;
+            
+            @media only screen and (max-width: 56.25em) 
+            {
+                width: 95%;
+                min-height: 50rem;
+            }
+
+            @media only screen and (max-width: 45em) 
+            {
+                width: 43rem;
+                height: auto;
+            }
+
+            @media only screen and (max-width: 25em) 
+            {
+                width: 38rem;
+            }
+        }
+
+        &__close 
+        {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background-color: transparent;
+            border: none;
+            color: $color-text;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: all 200ms $cubic-bezier-primary;
+
+            &:hover 
+            {
+                transform: scale(1.2)
+            }
+        }
+
+        &__left 
+        {
+            width: 60rem;
+            height: 100%;
+            display: inline-block;
+            @media only screen and (max-width: 56.25em) 
+            {
+                width: 55%;
+            }
+
+            @media only screen and (max-width: 45em) 
+            {
+                width: 100%;
+                height: auto;
+            }
+            
+        }
+
+        &__right 
+        {
+            width: calc(100% - 60.5rem);
+            display: inline-block;
+            vertical-align: top;
+            padding: 1.5rem;
+            color: $color-white;
+
+            @media only screen and (max-width: 56.25em) 
+            {
+                width: 45%;
+            }
+
+            @media only screen and (max-width: 45em) 
+            {
+                width: 100%;
+            }
+        }
+
+        &__label 
+        {
+            font-size: 1.6rem;
+            color: $color-text;
+            letter-spacing: 1px;
+        }
+
+        &__name 
+        {
+            font-size: 3rem;
+            letter-spacing: 1px;
+            font-weight: lighter;
+        }
+
+        &__technologies 
+        {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        &__technology 
+        {
+            display: inline-block;
+            margin: .5rem;
+            border: 1px solid $color-secondary;
+            padding: .5rem;
+            color: $color-text;
+            font-weight: lighter;
+            letter-spacing: 1px;
+            font-size: 1.3rem;
+        }
+        &__summary 
+        {
+            margin-top: 1rem;
+            font-family: $font-secondary;
+            font-size: 1.4rem;
+            line-height: 1.5;
+            color: $color-text;
+            overflow-y: scroll;
+            height: 22rem;
         }
     }
 
