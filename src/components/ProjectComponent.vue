@@ -304,7 +304,7 @@ export default {
         &__summary 
         {
             margin-top: 1rem;
-            font-family: $font-secondary;
+            font-family: $font-tertiary;
             font-size: 1.4rem;
             line-height: 1.5;
             color: $color-text;
