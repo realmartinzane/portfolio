@@ -21,6 +21,21 @@ html
     {
         font-size: 50%;
     }
+
+    @media only screen and (min-width: 143.75em)
+    {
+        font-size: 90%;
+    }
+
+    @media only screen and (min-width: 187.5em)
+    {
+        font-size: 110%;
+    }
+
+     @media only screen and (min-width: 237.5em)
+    {
+        font-size: 120%;
+    }
 }
 
 // Body
