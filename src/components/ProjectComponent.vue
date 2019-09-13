@@ -13,7 +13,7 @@
         </div>
 
         <div class="project__background" :class="{'project__background--show': showProject}">
-            <div class="project__modal">
+            <div class="project__modal" :class="{'project__modal--show': showProject}">
                 <button class="project__close" @click="showProject = false"><font-awesome-icon icon="times" /></button>
 
                 <div class="project__left">
@@ -171,7 +171,7 @@ export default {
 
         &__background 
         {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             z-index: $layer-modal;
@@ -180,6 +180,7 @@ export default {
             background-color: rgba($color-black, .3);
             opacity: 0;
             visibility: hidden;
+            transition: all 400ms $cubic-bezier-primary;
 
             &--show 
             {
@@ -196,6 +197,15 @@ export default {
             background-color: $color-primary;
             user-select: text;
             box-shadow: 0 0 5px $color-black;
+            opacity: 0;
+            transition: all 400ms 200ms $cubic-bezier-primary;
+            transform: translate(-50%, -50%) scale(.25);
+
+            &--show 
+            {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
             
             @media only screen and (max-width: 56.25em) 
             {
@@ -304,7 +314,7 @@ export default {
         &__summary 
         {
             margin-top: 1rem;
-            font-family: $font-tertiary;
+            font-family: $font-secondary;
             font-size: 1.4rem;
             line-height: 1.5;
             color: $color-text;
