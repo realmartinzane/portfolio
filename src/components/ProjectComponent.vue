@@ -320,6 +320,10 @@ export default {
             color: $color-text;
             overflow-y: scroll;
             height: 22rem;
+            &::-webkit-scrollbar-track
+            {
+                background-color: $color-primary-dark-2;
+            }
         }
     }
 

@@ -4,6 +4,7 @@
       <navigation-component></navigation-component>
       <contact-component></contact-component>
       <router-view></router-view>
+      <footer-component></footer-component>
   </div>
 </template>
 
@@ -11,9 +12,10 @@
 import BrandComponent from './components/BrandComponent'
 import NavigationComponent from './components/NavigationComponent'
 import ContactComponent from './components/ContactComponent'
+import FooterComponent from './components/FooterComponent'
 
 export default {
-  components: {BrandComponent, NavigationComponent, ContactComponent}
+  components: {BrandComponent, NavigationComponent, ContactComponent, FooterComponent}
 }
 </script>
 

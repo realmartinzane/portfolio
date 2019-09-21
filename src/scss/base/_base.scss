@@ -43,7 +43,7 @@ body
 {
     box-sizing: border-box;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 main
@@ -72,13 +72,13 @@ main
 ::-webkit-scrollbar-track
 {
 	border-radius: 12px;
-	background-color: transparent;
+	background-color: $color-footer;
 }
 
 ::-webkit-scrollbar
 {
 	width: 6px;
-    background-color: $color-secondary;
+    background-color: $color-footer;
     border-radius: 3px;
 }
 
