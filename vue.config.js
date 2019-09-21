@@ -8,5 +8,8 @@ module.exports = {
         path.resolve(__dirname, 'src/scss/abstracts/*.scss'),
       ]
     }
-  }
+  },
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/dist/'
+    : '/'
 }
