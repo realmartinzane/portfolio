@@ -1,7 +1,7 @@
 <template>
     <div class="col-1-of-2 project">
         <div class="project__item">
-            <img class="project__img" :src="'/img/' + img" alt="Project Image">
+            <img class="project__img" :src="'/img/' + project.img" alt="Project Image">
             <div class="project__overlay">
                 <div class="project__buttons">
                     <button href="#" class="project__button" @click="showProject = true">
@@ -17,29 +17,21 @@
                 <button class="project__close" @click="showProject = false"><font-awesome-icon icon="times" /></button>
 
                 <div class="project__left">
-                    <img class="project__img--modal" :src="'/img/' + img" alt="Project Image">
+                    <img class="project__img--modal" :src="'/img/' + project.img" alt="Project Image">
                 </div
 
                 ><div class="project__right">
                     <div class="project__label">Project</div>
-                    <h3 class="project__name">Personal Site</h3>
+                    <h3 class="project__name">{{ project.name }}</h3>
                     <ul class="project__technologies">
-                        <li class="project__technology">Single Page</li>
-                        <li class="project__technology">HTML &amp; CSS</li>
-                        <li class="project__technology">JavaScript</li>
-                        <li class="project__technology">SASS</li>
-                        <li class="project__technology">Vue.js</li>
-                        <li class="project__technology">PHP</li>
-                        <li class="project__technology">Laravel</li>
-                        <li class="project__technology">MySQL</li>
-                        <li class="project__technology">Responsive</li>
+                        <li class="project__technology" v-for="(technology, index) in project.technologies" :key="index">{{ technology.name }}</li>
                     </ul>
                     <div class="project__label">About</div>
                     <p class="project__summary">
-                        This is the page you are looking at right now. I had two goals with this project. First off, I wanted to have a personal page where I can display my work and other things related to my career as a software developer. Secondly, I wanted to practice my design skills and make the page look as good as possible, in terms of aesthetics. I definitely learned a lot from this project, specifically when it comes to CSS animations, and it was a lot of fun to work with. In the future I just want to keep the site updated, especially my impossible list and portfolio section, and I also want to perhaps update the design so that it always looks fresh.
+                        {{ project.summary }}
                     </p>
-                    <a href="#" class="project__button project__button--modal"><font-awesome-icon icon="eye" /> Demo</a>
-                    <a href="#" class="project__button project__button--modal"><font-awesome-icon icon="code" /> Code</a>
+                    <a :href="project.demo" class="project__button project__button--modal"><font-awesome-icon icon="eye" /> Demo</a>
+                    <a :href="project.code" class="project__button project__button--modal"><font-awesome-icon icon="code" /> Code</a>
                 </div>
             </div>
         </div>
@@ -51,7 +43,7 @@
 import ButtonComponent from './ButtonComponent'
 
 export default {
-    props: ['img'],
+    props: ['project'],
     components: {ButtonComponent},
     data(){return{
         showProject: false
@@ -320,6 +312,8 @@ export default {
             color: $color-text;
             overflow-y: scroll;
             height: 22rem;
+            white-space: pre-line;
+            
             &::-webkit-scrollbar-track
             {
                 background-color: $color-primary-dark-2;

@@ -27,6 +27,7 @@ export default {
     padding: 1.5rem;
     background-color: $color-secondary;
     user-select: none;
+    position: relative;
   }
 
 </style>

@@ -1,8 +1,8 @@
 <template>
   <main class="about" :class="{'rotate': loading}">
       <primary-header-component> <span>Yo, it's </span> <span> Martin Zane</span> </primary-header-component>
-      <primary-sub-component :text="'I\'m a web designer &amp; developer currently based in Stockholm, Sweden'"></primary-sub-component>
-      <primary-sub-component :text="'Let\'s create something special'"></primary-sub-component>
+      <primary-sub-component text="I'm a web designer &amp; developer currently based in Stockholm, Sweden"></primary-sub-component>
+      <primary-sub-component text="Hit me up and let's create something special"></primary-sub-component>
       <button-component>View Projects</button-component>
   </main>
 </template>

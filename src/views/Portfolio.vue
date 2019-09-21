@@ -1,7 +1,7 @@
 <template>
     <main>
         <secondary-header-component :class="{'slide-top': loading}">Portfolio</secondary-header-component>
-        <secondary-sub-component :class="{'slide-top': loading}">Have a look at my latest work. These are not all of my projects, but the ones that I am most proud of. If you're intersted in more, don't be shy to hit me up!</secondary-sub-component>
+        <secondary-sub-component :class="{'slide-top': loading}">These are my favorite projects I've worked on for the past year. Have a look around and make sure to hit me up!</secondary-sub-component>
         <projects-component></projects-component>
     </main>
 </template>

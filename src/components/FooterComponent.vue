@@ -31,8 +31,7 @@ export default {
         text-align: center;
         font-family: $font-secondary;
         border-top: 1px solid $color-primary;
-
-        
+        user-select: text;        
 
         &__item
         {
