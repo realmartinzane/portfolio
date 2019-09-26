@@ -1,4 +1,4 @@
-# Martin Zane Portfolio Site
+# Portfolio Site
 
 ## Project setup
 ```
