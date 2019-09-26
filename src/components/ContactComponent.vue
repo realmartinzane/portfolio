@@ -20,7 +20,7 @@
             </li>
 
             <li class="contact__item">
-                <a href="" target="_blank" class="contact__link contact__link--resume">
+                <a href="https://drive.google.com/file/d/1bt7OCMO7gF36BJgi2X5AzscXx4zuW_7k/view?usp=sharing" target="_blank" class="contact__link contact__link--resume">
                     <span class="contact__label">Resume</span> <font-awesome-icon :icon="['fas', 'portrait']" />
                 </a>
             </li>

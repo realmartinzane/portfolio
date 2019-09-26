@@ -30,8 +30,9 @@
                     <p class="project__summary">
                         {{ project.summary }}
                     </p>
-                    <a :href="project.demo" class="project__button project__button--modal"><font-awesome-icon icon="eye" /> Demo</a>
-                    <a :href="project.code" class="project__button project__button--modal"><font-awesome-icon icon="code" /> Code</a>
+                    <a :href="project.demo" class="project__button project__button--modal" target="_blank"><font-awesome-icon icon="eye" /> Demo</a>
+                    <button href="#" class="project__button project__button--modal" v-if="project.code == 'private'" disabled><font-awesome-icon icon="code" /> Private</button>
+                    <a :href="project.code" class="project__button project__button--modal" target="_blank" v-else><font-awesome-icon icon="code" /> Code</a>
                 </div>
             </div>
         </div>
@@ -141,6 +142,12 @@ export default {
             @media only screen and (max-width: 31.25em)
             {
                 font-size: 1.6rem;
+            }
+            &:disabled, &:disabled:hover
+            {
+                background-color: rgba($color-white, .4);
+                cursor: default;
+                
             }
 
             svg 
